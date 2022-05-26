@@ -7,9 +7,7 @@ const { addCount } = useSampleState()
 <template>
   <router-link to="/">back home</router-link>
   <div>about</div>
-  <el-button type="primary" @click="() => addCount(1)">
-    add 1
-  </el-button>
+  <var-button type="primary" @click="() => addCount(1)">add 1</var-button>
 </template>
 
 <style scoped lang="scss">

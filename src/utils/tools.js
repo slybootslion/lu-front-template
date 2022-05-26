@@ -1,5 +1,5 @@
-import { ElMessage } from 'element-plus'
 import dayjs from 'dayjs'
+import { Snackbar } from '@varlet/ui'
 
 export const StorageCache = {
   set (key, val) {
@@ -16,7 +16,13 @@ export const StorageCache = {
   },
 }
 
-export const showMessage = (message, type = 'error', duration = 1500) => ElMessage({ message, type, duration })
+export const showMessage = (content, type = 'error', duration = 1500) => {
+  Snackbar({
+    content,
+    duration,
+    type,
+  })
+}
 
 export const formatDate = (date, str = 'YYYY-MM-DD HH:mm:ss') => dayjs(date).format(str)
 
