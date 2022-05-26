@@ -1,94 +1,51 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
+    commonjs: true,
     es6: true,
+    jquery: true,
+    node: true,
   },
-  globals: {
-    __dirname: true,
-    process: true,
-    require: true,
-    module: true,
-    AMap: true,
-  },
-  extends: [
-    'plugin:vue/vue3-recommended',
-  ],
-  parser: 'vue-eslint-parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: '2020',
-    ecmaFeatures: {
-      jsx: true,
-    },
+    createDefaultProgram: true,
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: "latest",
+    project: "tsconfig.json",
+    sourceType: "module",
+    tsconfigRootDir: __dirname,
   },
+  root: true,
   rules: {
-    // 代码风格
-    'block-spacing': [2, 'always'],
-    'brace-style': [2, '1tbs', {
-      'allowSingleLine': true,
-    }],
-    'comma-spacing': [2, {
-      'before': false,
-      'after': true,
-    }],
-    'comma-dangle': [2, 'always-multiline'],
-    'comma-style': [2, 'last'],
-    'computed-property-spacing': [2, 'never'],
-    'indent': [2, 2, {
-      'SwitchCase': 1,
-    }],
-    'key-spacing': [2, {
-      'beforeColon': false,
-      'afterColon': true,
-    }],
-    'keyword-spacing': [2, {
-      'before': true,
-      'after': true,
-    }],
-    'linebreak-style': 0,
-    'multiline-ternary': [2, 'always-multiline'],
-    'no-multiple-empty-lines': [2, {
-      'max': 1,
-    }],
-    'no-unneeded-ternary': [2, {
-      'defaultAssignment': false,
-    }],
-    'quotes': [2, 'single'],
-    'semi': [2, 'never'],
-    'space-before-blocks': [2, 'always'],
-    'space-before-function-paren': [2, 'always'],
-    'space-in-parens': [2, 'never'],
-    'space-infix-ops': 2,
-    'space-unary-ops': [2, {
-      'words': true,
-      'nonwords': false,
-    }],
-    'spaced-comment': [2, 'always', {
-      'markers': ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!', ','],
-    }],
-    'switch-colon-spacing': [2, {
-      'after': true,
-      'before': false,
-    }],
-    'object-curly-spacing': [2, 'always'],
-    // ES6
-    'arrow-parens': [2, 'as-needed'],
-    'arrow-spacing': [2, {
-      'before': true,
-      'after': true,
-    }],
-    // Vue - https://github.com/vuejs/eslint-plugin-vue
-    'vue/multi-word-component-names': 0,
-    'vue/html-indent': [2, 2],
-    'vue/no-v-html': 0,
-    'vue/max-attributes-per-line': 0,
-    'vue/require-default-prop': 0,
-    'vue/singleline-html-element-content-newline': 0,
-    'vue/require-explicit-emits': [2, {
-      'allowProps': true,
-    }],
-    'vue/script-indent': [2, 2, {
-      'switchCase': 1,
-    }],
+    /* eslint-disable quote-props */
+    "eol-last": ["error", "always"],
+    "handle-callback-err": ["error", "err"],
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"], // react
+    "lines-between-class-members": ["error", "always"],
+    "multiline-ternary": ["off"],
+    "no-async-promise-executor": ["off"],
+    "no-console": ["off"],
+    "no-extend-native": ["off"],
+    "no-extra-semi": ["error"],
+    "no-new": ["off"],
+    "no-proto": ["off"],
+    "no-return-assign": ["off"],
+    "no-sequences": ["off"],
+    "no-tabs": ["off"],
+    "no-unreachable": ["off"],
+    "no-useless-constructor": ["off"],
+    "no-var": ["error"],
+    "object-curly-spacing": ["error", "always"],
+    "operator-linebreak": ["error", "before"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    // "sort-keys": ["error", "asc", { caseSensitive: false, natural: true }],
+    "space-before-function-paren": ["error", "always"],
+    "switch-colon-spacing": ["error"],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    /* eslint-enable quote-props */
   },
-}
+};
