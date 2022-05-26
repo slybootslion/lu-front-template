@@ -1,0 +1,131 @@
+@use "sass:math";
+// px2rem
+$ration: 100;
+@function p2r($px) {
+  @return math.div($px, $ration) + rem;
+}
+
+
+// 基础色
+$color-primary: #c41d32;
+$color-primary-mid: #e1233b;
+$color-primary-light: #f32640;
+
+// 语义色
+$color-info: #909399;
+$color-success: #28c41d;
+$color-warning: #c4b61d;
+$color-danger: #bb0000;
+
+// 文本
+$color-text-main: #303133;
+$color-text-normal: #606266;
+$color-text-sub: #909399;
+$color-text-placeholder: #C0C4CC;
+
+// 边框
+$color-border-1: #DCDFE6;
+$color-border-2: #E4E7ED;
+$color-border-3: #EBEEF5;
+$color-border-4: #F2F6FC;
+
+// 背景
+$color-bg: #f8f8f9;
+
+// flex 垂直水平居中
+%flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+%flex-center-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+// 将元素模拟成卡片外观
+%card {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e9eaec;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  position: relative;
+}
+
+// 撑满父元素
+%full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// 禁止用户选中 鼠标变为手形
+%unable-select {
+  user-select: none;
+  cursor: pointer;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  @extend %full;
+  font: 14px/1.5 "Microsoft YaHei", "Droid Sans Fallback", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  color: #333;
+
+  .centerX {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .centerY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .centerXY {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .txt-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.scroll-style {
+  &::-webkit-scrollbar {
+    width: p2r(4);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: p2r(10);
+    -webkit-box-shadow: inset 0 0 p2r(5) rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, .2);
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 p2r(5) rgba(0, 0, 0, .2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, .1);
+  }
+}
+
+body .popper-style {
+  padding-left: 0 !important;
+}
