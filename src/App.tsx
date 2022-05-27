@@ -1,8 +1,8 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
 
 function App () {
   const routing = useRoutes([
